@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend application for IoThings system",
+  "main": "core/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r dotenv/config core/main.js dotenv_config_path=./.env",
+    "dev": "nodemon"
+  },
+  "author": "Martin Stradiot",
+  "license": "ISC",
+  "dependencies": {
+    "active-modules-module": "git+https://5e6547fb352da028e3d82bd0328eb03998ad7fb8:x-oauth-basic@github.com/stradiot/active-modules-module.git",
+    "dotenv": "^6.2.0",
+    "graphql-module": "git+https://5e6547fb352da028e3d82bd0328eb03998ad7fb8:x-oauth-basic@github.com/stradiot/graphql-module.git",
+    "mqtt-module": "git+https://5e6547fb352da028e3d82bd0328eb03998ad7fb8:x-oauth-basic@github.com/stradiot/mqtt-module.git",
+    "require-all": "^3.0.0",
+    "rrd-module": "git+https://5e6547fb352da028e3d82bd0328eb03998ad7fb8:x-oauth-basic@github.com/stradiot/rrd-module.git",
+    "sqlite-module": "git+https://5e6547fb352da028e3d82bd0328eb03998ad7fb8:x-oauth-basic@github.com/stradiot/sqlite-module.git",
+    "zwave-interface-module": "git+https://5e6547fb352da028e3d82bd0328eb03998ad7fb8:x-oauth-basic@github.com/stradiot/zwave-interface-module.git"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "core/",
+      "databases/",
+      "GraphQL"
+    ],
+    "ignore": [
+      "databases/",
+      "node_modules/"
+    ],
+    "exec": "node -r dotenv/config core/main.js dotenv_config_path=./.env"
+  }
+}
