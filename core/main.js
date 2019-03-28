@@ -1,4 +1,3 @@
-console.log(__dirname);
 const graphql = require('graphql-module');
 const sqlite = require('sqlite-module');
 const mqtt = require('mqtt-module');
